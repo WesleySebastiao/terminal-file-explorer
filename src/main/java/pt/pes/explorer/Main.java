@@ -9,19 +9,20 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 public class Main {
+
     public static void main(String[] args) throws IOException {
-        
-        Screen ecra = new DefaultTerminalFactory().createScreen();
+
+        Screen ecra= new DefaultTerminalFactory().createScreen();
         ecra.startScreen();
 
-        int larguraTotal = ecra.getTerminalSize().getColumns();
-        int larguraPainel = larguraTotal/2;
+        int larguraTotal=ecra.getTerminalSize().getColumns();
+        int larguraPainel=larguraTotal / 2;
 
-        FilePanel painelEsquerdo = new FilePanel(0,larguraPainel, Path.of("."));
-        FilePanel painelDireito = new FilePanel(larguraPainel, larguraPainel, Path.of(".."));
+        FilePanel painelEsquerdo=new FilePanel(0, larguraPainel, Path.of("."));
+        FilePanel painelDireito=new FilePanel(larguraPainel, larguraPainel, Path.of(".."));
         FilePanel painelAtivo = painelEsquerdo;
 
-        while(true){
+        while (true) {
             ecra.clear();
 
             painelEsquerdo.draw(ecra);
@@ -33,20 +34,15 @@ public class Main {
                 continue;
             }
 
-            if(chave.getKeyType() == KeyType.EOF){
-                break;
-            }
             switch (chave.getKeyType()) {
-                case ArrowUp -> painelAtivo.moverParaCima();
-                case ArrowDown -> painelAtivo.moverParaBaixo();
-                case Tab ->painelAtivo =( painelAtivo ==painelEsquerdo ) ? painelDireito : painelEsquerdo; 
-                case Escape -> {
-                    ecra.stopScreen();
+                case ArrowDown-> painelAtivo.moverParaBaixo();
+                case ArrowUp->painelAtivo.moverParaCima();
+                case Tab -> painelAtivo = (painelAtivo == painelEsquerdo) ? painelDireito : painelEsquerdo;
+                case Escape -> { ecra.stopScreen();
                     return;
                 }
             }
         }
-        ecra.stopScreen();;
+
     }
-    
 }
