@@ -1,1 +1,4 @@
-pt/pes/explorer/App.class
+pt/pes/explorer/FilePanel.class
+pt/pes/explorer/Main.class
+pt/pes/explorer/Main$1.class
+pt/pes/explorer/FileManager.class
