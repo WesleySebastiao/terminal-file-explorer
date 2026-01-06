@@ -1,0 +1,24 @@
+Réltorio-Terminal File Explorer.
+Nome: Wesley Sebastião.
+numeroAluno: Fc58853.
+
+
+1. Maior desafio do projeto e como foi resolvido?
+
+O maior desafio que tive nesse projeto foi  a implementação corretamente da navegação e de mnipulação de ficheiros entre dois painéis no terminais, garantindo que operações como copiar, mover e apagar ficheiros funcionassem de forma segura e sincronizada entre a interface e o sistema de ficheiros.
+
+Esse desafio foi resolvido através de separação clara de resposabilidades a classe FileManager que passou a acontecer toda a logíca de acesso ao sistema de ficheiros, enquanto que a classe FilePanel ficou responsavel apenas pela interface e iteração com  utilizador e isso facilitou muito na correção de erros, e a escrita de testes.
+
+
+2. De que forma e quanto os LLMs ajudaram no projeto
+
+Os LLMs foram utilizados como apoio ao densevolvimento do projeto e principalmente para mais esclarecimento de como o Midnigth commander funcionava e ter mais ideias.
+
+Os LLMs foram uma ferramenta de apoio importante, acelerando o processo de aprendizagem e desenvolvimento, mas todas as decisões finais e correções foram feitas manualmente.
+
+3. Limitações dos LLMs utilizados
+
+Os LLMs nem sempre compreendem totalmente o contexto específico
+do projeto, obrigando mais a importancia de compreender o codigo total e não depender exclusivamente das LLMs.
+
+
